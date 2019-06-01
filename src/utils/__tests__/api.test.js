@@ -4,10 +4,9 @@ const MockAdapter = require("axios-mock-adapter");
 import { fetchMovies } from "../api";
 import { urls, errors } from "../../constants";
 
-// This sets the mock adapter on the default instance
-let mock;
-
 describe("API methods", () => {
+  let mock;
+
   // set up our mock object
   beforeEach(() => {
     mock = new MockAdapter(axios);
