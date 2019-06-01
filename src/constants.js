@@ -38,3 +38,8 @@ export const genres = {
   10752: "War",
   37: "Western"
 };
+
+export const errors = {
+  GENERIC: "Sorry, there has been an error. Please refresh the page.",
+  NO_MOVIES: "We couldn't find any movies"
+};
