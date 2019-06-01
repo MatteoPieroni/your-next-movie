@@ -2,6 +2,7 @@ const Dotenv = require("dotenv-webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  entry: "./src/index.jsx",
   module: {
     rules: [
       {
