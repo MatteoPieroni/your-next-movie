@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 
 import { fetchMovies } from '../utils/api';
 import { MovieCard } from './MovieCard.jsx';
@@ -42,6 +42,7 @@ export const reducer = (state, action) => {
 
 export const MovieList = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const isMobile = window.innerWidth;
 
   useEffect(() => {
     const moviesWrapper = async () => {
@@ -55,7 +56,7 @@ export const MovieList = () => {
     <div>
       <RatingInput value={state.filter} handleChange={(value) => dispatch({type: 'CHANGE_FILTER', filter: value})} />
       {state.movieList && state.movieList.map(movie => (
-        <MovieCard key={movie.id} movie={movie}/>
+        <MovieCard key={movie.id} movie={movie} isMobile={isMobile} />
       ))}
     </div>
   )

@@ -1,12 +1,12 @@
 import React from "react";
-import { shallow } from "enzyme";
-import { StarIcon } from "../StarIcon";
+import { mount } from "enzyme";
+import { StarIcon, StyledSvg } from "../StarIcon";
 
 describe("StarIcon Component", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<StarIcon />);
+    wrapper = mount(<StarIcon className="3-half" />);
   });
 
   it("renders an svg", () => {

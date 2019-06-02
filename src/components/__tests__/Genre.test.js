@@ -9,7 +9,7 @@ describe("Genre Component", () => {
     wrapper = shallow(<Genre />);
   });
 
-  it("renders a div", () => {
+  it("renders a p element", () => {
     expect(wrapper.find("div").length).toEqual(1);
   });
 });

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // this function takes the passed in className and maps it to a specific number of stars
-const StyledSvg = styled.svg`
+export const StyledSvg = styled.svg`
   .all-stars {
     ${props => {
     let styles = '';

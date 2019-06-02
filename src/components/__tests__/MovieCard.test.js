@@ -1,6 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
+
 import { MovieCard } from "../MovieCard";
+import { Rating } from "../Rating";
 
 describe("MovieCard Component", () => {
   let wrapper;
