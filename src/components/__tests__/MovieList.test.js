@@ -24,6 +24,7 @@ describe("MovieList component", () => {
   /**
    * This last test cannot run for the time being, because enzyme hasn't yet integrated
    * support for the useEffect hooks, but the implementation shows how it would work
+   * SEE https://github.com/airbnb/enzyme/issues/2073
    */
   // it("renders with the fetched movies", () => {
   //   // mock data
