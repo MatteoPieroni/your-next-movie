@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
+import { Range } from "react-range";
 
 import { RatingInput } from "../RatingInput";
 
@@ -7,7 +8,10 @@ describe("RatingInput component", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<RatingInput />);
+    wrapper = shallow(<RatingInput value={3} />);
+  });
+  it("returns an h4 element for instructions", () => {
+    expect(wrapper.find("h4").length).toEqual(1);
   });
   it("returns an input element", () => {
     expect(wrapper.find("input").length).toEqual(1);

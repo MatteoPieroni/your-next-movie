@@ -60,9 +60,7 @@ export const MovieList = () => {
 
   return (
     <div>
-      <section>
-        <RatingInput value={state.filter} handleChange={(value) => dispatch({type: 'CHANGE_FILTER', filter: value})} />
-      </section>
+      <RatingInput value={state.filter} handleChange={(value) => dispatch({type: 'CHANGE_FILTER', filter: value})} />
       <StyledMovieSection>
         {state.movieList && state.movieList.map(movie => (
           <MovieCard key={movie.id} movie={movie} isMobile={isMobile} />
