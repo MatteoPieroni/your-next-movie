@@ -1,3 +1,7 @@
+/***************************************
+ * This component holds the logic and
+ * markup for each of the genre tags
+ **************************************/
 import React from 'react'
 import styled from 'styled-components';
 

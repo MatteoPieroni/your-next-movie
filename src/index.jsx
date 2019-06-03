@@ -1,9 +1,15 @@
+/***************************************
+ * This is the main app file
+ **************************************/
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import styled from 'styled-components';
 
 import { MovieList } from "./components/MovieList.jsx";
 
+/*
+  We are using styled components for the styles
+*/
 const StyledApp = styled.main`
   img {
     display: block;
@@ -31,6 +37,13 @@ const StyledApp = styled.main`
       font-size: 3.5rem;
     }
   }
+  .error {
+    display: block;
+    background: red;
+    color: #fff;
+    text-align: center;
+  }
+  /* set up utility class to hide content from sighted users but to keep it shown to screen-readers */
   .sr-only {
     border: 0 !important;
     clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
@@ -52,7 +65,8 @@ const App = () => {
   return (
     <StyledApp>
       <h1>Your next movie!</h1>
-      <MovieList />
+      {error && <div className="error"><p aria-live="polite">There has been an error, please try again</p><p>Details: {error}</p></div>}
+      <MovieList setError={setError} />
     </StyledApp>
   );
 };

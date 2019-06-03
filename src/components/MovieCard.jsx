@@ -1,3 +1,7 @@
+/***************************************
+ * This component holds the logic and
+ * markup for the movie card itself
+ **************************************/
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import 'react-perfect-scrollbar/dist/css/styles.css';
@@ -10,6 +14,7 @@ import { getGenres } from '../utils/movieListHelpers.js';
 const StyledArticle = styled.article`
   display: flex;
   flex-direction: column;
+  /* keep the header and footer apart, for same height titles */
   justify-content: space-between;
   padding: .5rem;
   width: calc(50% - 1rem);

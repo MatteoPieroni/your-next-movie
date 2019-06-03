@@ -1,3 +1,7 @@
+/***************************************
+ * This component holds the logic and
+ * markup for the filtering of ratings
+ **************************************/
 import React from 'react';
 import { Range, getTrackBackground } from 'react-range';
 import styled from 'styled-components';
@@ -26,6 +30,7 @@ const StyledSection = styled.section`
     justify-content: center;
     flex-wrap: wrap;
   }
+  /* styles for the custom slider input */
   .track {
     height: 36px;
     display: flex;
@@ -60,6 +65,7 @@ const StyledSection = styled.section`
   }
 `;
 
+/* both inputs here are controlled by the same value and have the same onChange */
 export const RatingInput = ({value, handleChange}) => {
   return (
     <StyledSection>

@@ -1,3 +1,8 @@
+/***************************************
+ * This file exports the helpers
+ * to handle ordering, filtering and
+ * genres for the movies
+ **************************************/
 import { genres } from "../constants";
 
 // pure function to return movieArray ordered by popularity

@@ -1,3 +1,7 @@
+/***************************************
+ * This component holds the logic
+ * and markup for the stars ratings
+ **************************************/
 import React from 'react';
 import styled from 'styled-components';
 
@@ -32,6 +36,7 @@ export const StyledSvg = styled.svg`
   }
 `;
 
+/* We are using a set of svg stars and and a linearGradient to show the half stars */
 export const StarIcon = ({className}) => {
   return (
   <StyledSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" className={className}>

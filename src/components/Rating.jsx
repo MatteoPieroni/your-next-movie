@@ -1,3 +1,8 @@
+/***************************************
+ * This component holds the logic and
+ * markup for the container of the
+ * stars rating
+ **************************************/
 import React from 'react';
 import styled from 'styled-components';
 
@@ -46,6 +51,7 @@ export const Rating = ({value, isOpen, handleClick}) => {
       {/* we use a label to make sure users with screen-readers know the content, we also show the rating to sighted users via click */}
       <label className={isOpen ? 'open' : ''}>
         <StarIcon className={className} />
+        {/* EASTER EGG - try to click or tap on the stars */}
         <span className="rating-description" aria-hidden="true">
           <p>{value} out of 10</p>
         </span>

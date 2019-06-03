@@ -1,3 +1,8 @@
+/***************************************
+ * This component holds the logic and
+ * markup for the whole movie list on
+ * the page
+ **************************************/
 import React, { useReducer, useEffect } from 'react';
 import styled from 'styled-components';
 
@@ -33,7 +38,7 @@ const filterAndOrderMovieList = (movieArray, filter) => {
       return orderedMovieArray;
 }
 
-// using a reducer helps keeping the movieList in sync with the filter
+// using a reducer helps keeping the movieList in sync with the filter (REDUX style!)
 export const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_MOVIES':
@@ -59,6 +64,7 @@ export const MovieList = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const isMobile = window.innerWidth;
 
+  // useEffect is used as componentDidMount
   useEffect(() => {
     const moviesWrapper = async () => {
       const movies = await fetchMovies();
