@@ -1,15 +1,15 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 import { Genre } from "../Genre";
 
 describe("Genre Component", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Genre />);
+    wrapper = mount(<Genre />);
   });
 
   it("renders a p element", () => {
-    expect(wrapper.find("div").length).toEqual(1);
+    expect(wrapper.find("p").length).toEqual(1);
   });
 });
