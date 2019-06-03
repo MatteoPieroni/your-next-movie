@@ -1,9 +1,10 @@
 /***************************************
  * This is the main app file
  **************************************/
+import "@babel/polyfill";
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import { MovieList } from "./components/MovieList.jsx";
 
@@ -48,7 +49,7 @@ const StyledApp = styled.main`
     border: 0 !important;
     clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
     -webkit-clip-path: inset(50%) !important;
-      clip-path: inset(50%) !important;  /* 2 */
+    clip-path: inset(50%) !important; /* 2 */
     height: 1px !important;
     margin: -1px !important;
     overflow: hidden !important;
@@ -65,7 +66,12 @@ const App = () => {
   return (
     <StyledApp>
       <h1>Your next movie!</h1>
-      {error && <div className="error"><p aria-live="polite">There has been an error, please try again</p><p>Details: {error}</p></div>}
+      {error && (
+        <div className="error">
+          <p aria-live="polite">There has been an error, please try again</p>
+          <p>Details: {error}</p>
+        </div>
+      )}
       <MovieList setError={setError} />
     </StyledApp>
   );
