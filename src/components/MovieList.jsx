@@ -9,6 +9,15 @@ import { RatingInput } from './RatingInput.jsx';
 const StyledMovieSection = styled.section`
   display: flex;
   flex-wrap: wrap;
+  @media screen and (min-width: 768px) {
+    padding: 0 1rem;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 0 1.5rem;
+  }
+  @media screen and (min-width: 1920px) {
+    padding: 0 2rem;
+  }
 `;
 
 // allMovies represents the original collected data, movieList represents the showing movies

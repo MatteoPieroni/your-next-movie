@@ -3,7 +3,24 @@ import { Range, getTrackBackground } from 'react-range';
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-  padding: 1rem;
+  margin: 1rem auto;
+  width: calc(100% - 2rem);
+  @media screen and (min-width: 768px) {
+    margin: 1rem auto;
+    width: 50%;
+  }
+  @media screen and (min-width: 1200px) {
+  margin: 1rem auto;
+  width: 35%;
+  }
+  @media screen and (min-width: 1920px) {
+    margin: 1rem auto;
+    width: 20%;
+  }
+  h4 {
+    text-align: center;
+    text-transform: uppercase;
+  }
   .container {
     display: flex;
     justify-content: center;

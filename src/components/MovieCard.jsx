@@ -11,6 +11,18 @@ const StyledArticle = styled.article`
   justify-content: space-between;
   padding: .5rem;
   width: calc(50% - 1rem);
+  @media screen and (min-width: 768px) {
+    padding: 1rem;
+    width: calc(33.3% - 2rem); 
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 1.5rem 1rem;
+    width: calc(25% - 2rem); 
+  }
+  @media screen and (min-width: 1920px) {
+    padding: 1.5rem 1rem;
+    width: calc(16.666% - 2rem); 
+  }
   img {
     border-radius: 5px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28), 0 10px 10px rgba(0, 0, 0, 0.06);

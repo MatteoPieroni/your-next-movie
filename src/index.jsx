@@ -10,10 +10,26 @@ const StyledApp = styled.main`
     max-width: 100%;
   }
   h1 {
+    margin-top: 0;
+    padding: 1rem 1.5rem;
+    background: #053f5e;
     font-family: Rubik, Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
     font-weight: 300;
-    font-size: 2.5rem;
-    text-align: center;
+    text-align: left;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    @media screen and (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+    @media screen and (min-width: 1200px) {
+      padding: 1rem 2rem;
+      font-size: 3rem;
+    }
+    @media screen and (min-width: 1920px) {
+      padding: 1rem 2.5rem;
+      font-size: 3.5rem;
+    }
   }
   .sr-only {
     border: 0 !important;
