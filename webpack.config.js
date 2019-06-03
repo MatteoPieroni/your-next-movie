@@ -19,10 +19,22 @@ module.exports = {
             loader: "html-loader"
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          }
+        ]
       }
     ]
   },
   plugins: [
+    // needed to use .env files variables in webpack build
     new Dotenv(),
     new HtmlWebPackPlugin({
       template: "./src/index.html",

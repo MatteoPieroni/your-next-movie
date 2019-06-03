@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import ScrollArea from 'react-perfect-scrollbar';
 
 import { Rating } from './Rating.jsx';
 import { Genre } from './Genre.jsx';
@@ -32,9 +34,14 @@ const StyledArticle = styled.article`
   }
   .genres {
     display: flex;
-    overflow: auto;
-    &.open {
-      height: auto;
+  }
+  /* styles for the scrollbar */
+  .ps__rail-x {
+    height: 10px;
+    &:hover, &.ps--clicking {
+      .ps__thumb-x {
+        height: 6px;
+      }
     }
   }
 `;
@@ -55,8 +62,11 @@ export const MovieCard = ({movie, isMobile}) => {
       </header>
       <footer>
         <Rating value={movie.vote_average} isOpen={isOpen} handleClick={() => setIsOpen(!isOpen)} />
-        <div className={`genres ${isOpen ? 'open' : ''}`}>
+          
+        <div className="genres__container">
+        <ScrollArea horizontal={true} className="genres">
           {genres && genres.map(genre => <Genre name={genre} key={`${movie.id}-${genre}`} />)}
+        </ScrollArea>
         </div>
       </footer>
     </StyledArticle>
