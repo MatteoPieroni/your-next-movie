@@ -1,9 +1,15 @@
-import React, { useReducer, useEffect, useState } from 'react';
+import React, { useReducer, useEffect } from 'react';
+import styled from 'styled-components';
 
 import { fetchMovies } from '../utils/api';
 import { MovieCard } from './MovieCard.jsx';
 import { orderMoviesArrayDescending, filterMoviesArrayByRating } from '../utils/movieListHelpers';
 import { RatingInput } from './RatingInput.jsx';
+
+const StyledMovieSection = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 // allMovies represents the original collected data, movieList represents the showing movies
 export const initialState = {allMovies: [], movieList: [], filter: 3};
@@ -54,10 +60,14 @@ export const MovieList = () => {
 
   return (
     <div>
-      <RatingInput value={state.filter} handleChange={(value) => dispatch({type: 'CHANGE_FILTER', filter: value})} />
-      {state.movieList && state.movieList.map(movie => (
-        <MovieCard key={movie.id} movie={movie} isMobile={isMobile} />
-      ))}
+      <section>
+        <RatingInput value={state.filter} handleChange={(value) => dispatch({type: 'CHANGE_FILTER', filter: value})} />
+      </section>
+      <StyledMovieSection>
+        {state.movieList && state.movieList.map(movie => (
+          <MovieCard key={movie.id} movie={movie} isMobile={isMobile} />
+        ))}
+      </StyledMovieSection>
     </div>
   )
 }

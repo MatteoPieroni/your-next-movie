@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 // this function takes the passed in className and maps it to a specific number of stars
 export const StyledSvg = styled.svg`
+  z-index: 1;
+  transition: opacity .3s ease;
+  cursor: pointer;
   .all-stars {
     ${props => {
     let styles = '';
